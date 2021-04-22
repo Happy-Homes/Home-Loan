@@ -14,7 +14,8 @@ public class IncomeServiceImpl implements IncomeService {
 	@Override
 	public IncomeDetails updateIncome(IncomeDetails incomeDetails) {
 		
-		return incomeDao.addOrUpdateIncome(incomeDetails);
+		IncomeDetails incDetails= incomeDao.addOrUpdateIncome(incomeDetails);
+		return incDetails;
 	}
 
 	@Override

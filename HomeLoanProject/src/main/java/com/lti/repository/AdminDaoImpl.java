@@ -19,7 +19,7 @@ public class AdminDaoImpl implements AdminDao {
 	}
 	@Override
     public int findByEmailAndPassword(String adminEmail, String adminPassword) {
-        return (Integer) em
+        return  (Integer) em
                 .createQuery("select a.adminId from Admin a where a.adminEmail = :em and a.adminPassword = :pw")
                 .setParameter("em", adminEmail)
                 .setParameter("pw", adminPassword)

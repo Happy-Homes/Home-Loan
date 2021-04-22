@@ -48,9 +48,6 @@ public class CustDaoImpl implements CustDao {
 		Customer cust = em.merge(customer);
 		return cust;
 	}
-
-	
-	
 	
 	
 }

@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_loanapplication")
 public class LoanApplication {
@@ -92,14 +94,19 @@ public class LoanApplication {
 		this.amountSanctioned = amountSanctioned;
 	}
 
-	/*
-	 * public Customer getCustomer() { return customer; } public void
-	 * setCustomer(Customer customer) { this.customer = customer; }
-	 */
+	@JsonIgnore
+	public Customer getCustomer() {
+		return customer;
+	}
+	@JsonIgnore
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	@JsonIgnore
 	public EmiDetails getEmiDetails() {
 		return emiDetails;
 	}
-
+	@JsonIgnore
 	public void setEmiDetails(EmiDetails emiDetails) {
 		this.emiDetails = emiDetails;
 	}
@@ -111,11 +118,11 @@ public class LoanApplication {
 	public void setIncomeDetails(IncomeDetails incomeDetails) {
 		this.incomeDetails = incomeDetails;
 	}
-
+	@JsonIgnore
 	public Property getProperty() {
 		return property;
 	}
-
+	@JsonIgnore
 	public void setProperty(Property property) {
 		this.property = property;
 	}

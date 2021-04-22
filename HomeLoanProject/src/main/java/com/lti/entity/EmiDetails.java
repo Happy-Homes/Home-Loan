@@ -10,6 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="tbl_emidetails")
 public class EmiDetails {
@@ -36,11 +38,11 @@ public class EmiDetails {
 	public void setEmiId(int emiId) {
 		this.emiId = emiId;
 	}
-
+	@JsonIgnore
 	public LoanApplication getLoanApplication() {
 		return loanApplication;
 	}
-
+	@JsonIgnore
 	public void setLoanApplication(LoanApplication loanApplication) {
 		this.loanApplication = loanApplication;
 	}

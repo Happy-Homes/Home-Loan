@@ -3,15 +3,21 @@ package com.lti.dto;
 import org.springframework.web.multipart.MultipartFile;
 
 public class DocumentDto {
-	private int docId;
-	
-    private MultipartFile pan,aadhar,loa,salesDeed,paySlip,bankStatement,noc,incomeTax;
-    
-	public int getDocId() {
-		return docId;
+	private int custId;
+	private int loanAppNo;
+    public int getLoanAppNo() {
+		return loanAppNo;
 	}
-	public void setDocId(int docId) {
-		this.docId = docId;
+	public void setLoanAppNo(int loanAppNo) {
+		this.loanAppNo = loanAppNo;
+	}
+	private MultipartFile pan,aadhar,loa,salesDeed,paySlip,bankStatement,noc,incomeTax;
+    
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
 	}
 	public MultipartFile getPan() {
 		return pan;

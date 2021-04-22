@@ -9,6 +9,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_document")
 public class LoanDocument {
@@ -36,15 +38,26 @@ public class LoanDocument {
 	@JoinColumn(name = "custId")
 	Customer customer;
 
-	/*
-	 * public LoanApplication getLoanApplication() { return loanApplication; }
-	 * 
-	 * public void setLoanApplication(LoanApplication loanApplication) {
-	 * this.loanApplication = loanApplication; }
-	 */
+	
 
 	public int getDocId() {
 		return docId;
+	}
+	@JsonIgnore
+	public LoanApplication getLoanApplication() {
+		return loanApplication;
+	}
+	@JsonIgnore
+	public void setLoanApplication(LoanApplication loanApplication) {
+		this.loanApplication = loanApplication;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public void setDocId(int docId) {

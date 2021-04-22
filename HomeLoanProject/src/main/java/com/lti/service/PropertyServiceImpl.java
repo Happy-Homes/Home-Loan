@@ -14,7 +14,8 @@ public class PropertyServiceImpl implements PropertyService {
 	@Override
 	public Property updateProperty(Property property) {
 		
-		return propertyDao.updateProperty(property);
+		Property property2= propertyDao.updateProperty(property);
+		return property2;
 	}
 
 	@Override

@@ -12,12 +12,18 @@ public class LoanDocsServiceImpl implements LoanDocsService {
 	@Autowired
 	private LoanDocsDao docsDao;
 	
-	public LoanDocument getDocs(int docId) {
-		return docsDao.findDocsById(docId);
+	public LoanDocument getDocs(int custId) {
+		return docsDao.findDocsById(custId);
 	}
 	
 	public LoanDocument updateDocs(LoanDocument loanDocument) {
 		return docsDao.addOrUpdateDocs(loanDocument);
+	}
+
+	@Override
+	public void update(LoanDocument loanDocument) {
+		docsDao.save(loanDocument);
+		
 	}
 	
 

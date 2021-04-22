@@ -10,6 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="tbl_property")
 public class Property {
@@ -25,10 +27,11 @@ public class Property {
 	@OneToOne(mappedBy="property",cascade=CascadeType.ALL)
 	LoanApplication loanApplication;
 	
-	
+	@JsonIgnore
 	public LoanApplication getLoanApplication() {
 		return loanApplication;
 	}
+	@JsonIgnore
 	public void setLoanApplication(LoanApplication loanApplication) {
 		this.loanApplication = loanApplication;
 	}

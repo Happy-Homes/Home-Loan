@@ -24,4 +24,15 @@ public class LoanDocsDaoImpl implements LoanDocsDao {
 		return entityManager.merge(loanDocument);
 	}
 
+	@Override
+	public LoanDocument findDocByCustId(int custId) {
+		return entityManager.find(LoanDocument.class, custId);
+	}
+
+	@Override
+	public void save(LoanDocument loanDocument) {
+		entityManager.merge(loanDocument);
+		
+	}
+
 }

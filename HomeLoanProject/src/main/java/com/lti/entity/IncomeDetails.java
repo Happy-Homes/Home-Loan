@@ -9,6 +9,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="tbl_incomedetails")
 public class IncomeDetails {
@@ -74,11 +76,11 @@ public class IncomeDetails {
 	public void setCreditScore(int creditScore) {
 		this.creditScore = creditScore;
 	}
-
+	@JsonIgnore
 	public LoanApplication getLoanApplication() {
 		return loanApplication;
 	}
-
+	@JsonIgnore
 	public void setLoanApplication(LoanApplication loanApplication) {
 		this.loanApplication = loanApplication;
 	}

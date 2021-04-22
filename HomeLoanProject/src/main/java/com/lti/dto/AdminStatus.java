@@ -1,8 +1,11 @@
 package com.lti.dto;
 
+import com.lti.dto.Status.StatusType;
+
 public class AdminStatus extends Status{
 	private int adminId;
     private String adminName;
+    
 	public int getAdminId() {
 		return adminId;
 	}
@@ -15,5 +18,7 @@ public class AdminStatus extends Status{
 	public void setAdminName(String adminName) {
 		this.adminName = adminName;
 	}
+	
+	
     
 }

@@ -18,8 +18,7 @@ public class IncomeDaoImpl implements IncomeDao{
 	
 	@Transactional
     public IncomeDetails addOrUpdateIncome(IncomeDetails incomeDetails) {
-        em.merge(incomeDetails);
-        return incomeDetails;
+        return em.merge(incomeDetails);
     }
 public IncomeDetails findIncomeById(int incId){
 	return em.find(IncomeDetails.class, incId);

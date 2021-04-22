@@ -24,7 +24,7 @@ public class PropertyDaoImpl implements PropertyDao{
 
    @Transactional
 	public Property updateProperty(Property property) {
-		em.merge(property);
-		return property;
+		return em.merge(property);
+		
 	}
 }

@@ -14,6 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_customer")
 public class Customer {
@@ -133,11 +135,13 @@ public class Customer {
 		this.profilePic = profilePic;
 	}
 
-	/*
-	 * public List<LoanApplication> getLoanApplication() { return loanApplication; }
-	 * 
-	 * public void setLoanApplication(List<LoanApplication> loanApplication) {
-	 * this.loanApplication = loanApplication; }
-	 */
+	@JsonIgnore
+	public List<LoanApplication> getLoanApplication() {
+		return loanApplication;
+	}
+	@JsonIgnore
+	public void setLoanApplication(List<LoanApplication> loanApplication) {
+		this.loanApplication = loanApplication;
+	}
 
 }
